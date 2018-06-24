@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="keon.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="keon.js"></script>
+</head>
+<body>
+  <!-- Side navigation -->
+<div class="sidenav">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+  
+  <!-- Page content -->
+  <div class="everything">
+  <div class="main">
+    
+  </div>
+        <div class="jumbotron">
+                <div class="container">
+                  <h1 class="display-4">Zachary's Site</h1>
+                  <p class="lead">Zachary's Lowkey Website</p>
+                </div>
+              </div>
+    <div class = "container1">
+        <div class = "row">
+            <div class = "col - lg - 6">
+                <div>
+                    <img class = "profile-pic" style = "width: 240px" src = "zach.jpg">
+                </div>
+            </div>
+            <div class = "col - lg - 6" id = "info" style="height: 400px" style = "width: 400px">
+                <h2 id= "h2title">Welcome to Zachary's <br> LowKey Website</h2>
+                <button onclick="myFunction1()" class="button">Click Here to Start Page</button>
+            </div>
+        </div>
+        <br>
+        <div id = "demo">  
+            <div class = "col - lg - 4" id = "p3">
+                        <p>Time is like a River, <br>
+                            it may grow and gather, <br>
+                            but its patterns remain the same... <br>
+                            Which tool will you choose in your adventure? </p>
+
+                    <button onclick = "myFunction2()" class="button1" id="button1">Movie Search</button>
+                    <button onclick = "myFunction3()" class="button2" id="button2">API Search</button>
+                            
+                        <div>    
+                            
+            <div class = "col - lg - 4" id = "p4">
+                    <img style = "float: right" src = "win.gif">
+                    <div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    
+
+
+<div id = "color" class="fade"><img style = "height: 215px" style = "width: 444px" src = "monkey.jpg"></div>
+                            
+                            
+<div id= "fuckYou">Alice Had A Very Long And Dark Fall Before She Reached Wonderland.</div>       
+                    
+                     <style type="text/css">
+                       button,
+                       div,
+                       form,
+                       input {
+                         margin: 10px;
+                       }
+                     </style>
+                    </head>
+                    
+                    <body>
+                    
+                     <div class = "container2 "id="container2">
+                       <h1>Movie Search</h1>
+                    
+                       <!-- Movies will get dumped here -->
+                       <div id="movies-view"></div>
+                       <div id="movie-details"></div>
+                    
+                       <form id="movie-form">
+                         <label for="movie-input">Add a Movie</label>
+                         <input type="text" id="movie-input"><br>
+                    
+                         <!-- Button triggers new movie to be added -->
+                         <input id="add-movie" type="submit" value="Add a Movie">
+                       </form>
+                       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                       <script type="text/javascript">
+                         // Initial array of movies
+                         var movies = ["Titanic", "Toy Story"];
+                        //  var title = null;
+                         // Function for displaying movie data
+                        //  let index = 0;
+                         
+                         
+                         function renderButtons() {
+                    
+                           
+                           for (let i = 0; i < movies.length; i++) {
+                            $('#movies-view').append(`<button class="pressButton">${movies[i]}</button>`);
+                           }
+                          //  console.log($('#movies-view').append(`<button class="pressButton">${movies[index]}</button>`))
+                           
+                    
+                         }
+                    
+                         //This function handles events where one button is clicked
+                         $("#add-movie").on("click", function() {
+                           event.preventDefault();
+                           let title = $('#movie-input').val();
+                          //  for (let i = 0; i < movies.length; i++) {
+                             $('#movies-view').append(`<button class="pressButton">${title}</button>`);
+                          //  }
+                           
+                           movies.push(title);
+                           
+                           console.log(movies);
+                           
+                    
+                         });
+                    
+                         $(document).on("click", ".pressButton", function() {
+                           event.preventDefault();
+                           console.log('HELLO');
+                           var movie = $(this).text();
+                           console.log('button movie ' + movie + '<-- Before Here');
+                    
+                           // Here we construct our URL
+                           var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+                           console.log(queryURL);
+                           $.ajax({
+                           url: queryURL,
+                           method: "GET"
+                           }).then(function(response) {
+                             console.log(response);
+                             $('#movie-details').html(`
+                               <h1>${response.Title}</h1>
+                               <img src="${response.Poster}">
+                               <div>Year: ${response.Year}</div>
+                               <div>Rated: ${response.Rated}</div>
+                               <div>Released: ${response.Released}</div>
+                               <div>Runtime: ${response.Runtime}</div>
+                               <div>Genre: ${response.Genre}</div>
+                               <div>Director: ${response.Director}</div>
+                               <div>Writer: ${response.Writer}</div>
+                               <div>Actors: ${response.Actors}</div>
+                               <div>Plot: ${response.Plot}</div>
+                               <div>Country: ${response.Country}</div>`);
+                         });
+                         });
+                         
+                    
+                         // Calling the renderButtons function to display the initial list of movies
+                         renderButtons();
+                       </script>
+                     </div>
+                     <style type="text/css">
+                      button,
+                      div,
+                      form,
+                      input {
+                        margin: 10px;
+                      }
+                      body {
+                      background-color: rgb(61, 60, 60) ;
+                  }
+                  input {
+                      font-size: 16px;
+                  }
+                  .header {
+                      overflow: hidden;
+                      padding: 20px 10px;
+                      background-color: black;
+                      height: 40px;
+                      position: relative;
+                      bottom: 40px;
+                      
+                  }
+                  .pheader {
+                      font-size: 30px;
+                      position: relative;
+                      bottom: 24px;
+                      color: #f1f1f1;
+                      left: -10px;
+                  }
+                  
+                
+                  p {
+                      padding: 10px;
+                      color: white;
+                  }
+                  #buttons-view {
+                      border: 2px solid black;
+                      width: 475px;
+                  }
+                  button {
+                    background-color: darkslategrey;
+                    font-size: 14px;
+                  }
+                    </style>
+                  
+                  
+                  
+                  
+                    <div class="container3" id = "container3">
+                      <div class="header"><p class="pheader">Gif Search</p>
+                  
+                      </div>
+                  
+                  <!-- Rendered Buttons will get gifs Dumped Here  -->
+                  <div id="buttons-view"></div>
+                  
+                  <form id="gif-form">
+                      
+                      <label for="gif-input">Add a Gif</label>
+                      <input type="text" name = "comment" id="gif-input">
+                      <br>
+                  
+                      <!-- Button triggers new gif to be added -->
+                      <input id="add-gif" type="submit" value="Add a Gif Search Value">
+                    </form>
+                  
+                      <!-- Gifs Get Dumped Dere -->
+                      <div id="gifs-view"></div>
+                  
+                      
+                  
+                      
+                  
+                      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                      <script type="text/javascript">
+                        // Initial array of Gifs
+                        var gifs = ["James Dean", "Nobody Cares", "Wookie", "Abraham Lincoln"];
+                  
+                        // displayGifInfo function re-renders the HTML to display the appropriate content
+                        function displayGifInfo() {
+                  
+                          // Creating an AJAX call for the specific gif button being clicked
+                          $("button").on("click", function() { 
+                            console.log("this is clicked")
+                        var person = $(this).attr("data-person");
+                        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+                          person + "&api_key=dc6zaTOxFJmzC&limit=10";
+                  
+                        $.ajax({
+                          url: queryURL,
+                          method: "GET"
+                        })
+                          .then(function(response) {
+                            var results = response.data;
+                  
+                            for (var i = 0; i < results.length; i++) {
+                              var gifDiv = $("<div class='item'>");
+                  
+                              var rating = results[i].rating;
+                  
+                              var p = $("<p>").text("Rating: " + rating);
+                  
+                              var personImage = $("<img>");
+                              personImage.attr("src", results[i].images.fixed_height.url);
+                  
+                              gifDiv.prepend(p);
+                              gifDiv.prepend(personImage);
+                  
+                              $("#gifs-view").prepend(gifDiv);
+                            }
+                          });
+                      });
+                  
+                        }
+                  
+                        // Function for displaying gif data
+                        function renderButtons() {
+                  
+                          // Deleting the gifs prior to adding new gifs
+                          // (this is necessary otherwise you will have repeat buttons)
+                          $("#buttons-view").empty();
+                  
+                          // Looping through the array of gifs
+                          for (var i = 0; i < gifs.length; i++) {
+                  
+                            // Dynamicaly generating buttons for each gif in the array
+                            // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+                            var a = $("<button>");
+                            // Adding a class of gif-btn to our button
+                            a.addClass("gif-btn");
+                            // Adding a data-attribute
+                            a.attr("data-person", gifs[i]);
+                            // Providing the initial button text
+                            a.text(gifs[i]);
+                            // Adding the button to the buttons-view div
+                            $("#buttons-view").append(a);
+                          }
+                        }
+                  
+                        // This function handles events where a gif button is clicked
+                        $("#add-gif").on("click", function(event) {
+                          event.preventDefault();
+                          // This line grabs the input from the textbox
+                          var gif = $("#gif-input").val();
+                  
+                          // Adding gif from the textbox to our array
+                          gifs.push(gif);
+                          $('#gif-input').val('');
+                          // Calling renderButtons which handles the processing of gif array
+                          renderButtons();
+                        });
+                  
+                        // Adding a click event listener to all elements with a class of "gif-btn"
+                        $(document).on("click", ".gif-btn", displayGifInfo);
+                  
+                        // Calling the renderButtons function to display the intial buttons
+                        renderButtons();
+                  
+                      </script>
+                    </div>
+                      </body>
+
+
+                    </body>
+                    
+                    </html>
+                                  </div>
+            
+                                </div>
+
+</body>
+</html>
