@@ -104,6 +104,7 @@ color:white;
     background-image: url(jumbotron.jpg);
     background-repeat: no-repeat;
     background-color: rgb(29, 29, 29);
+    background-size: cover;
     
 }
 #fuckYou {
